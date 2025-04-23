@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+  </head>
+  <body>
+    <h1>
+       Welcome!
+    </h1>
+    <p>
+        <strong>Hello!</strong> 
+        Earlier today I was working on implementing 
+        <a href="https://en.wikipedia.org/wiki/Cel_shading">cel shading</a> 
+        into a program I am writing for CSC155, so I will write about that!
+        To do this, I first had to figure out how a cel shader differs from my current Blinn-Phong lighting implementation. The main differences
+        lie in how diffuse and specular lighting characteristics are calculated. Blinn-Phong calculates diffuse lighting based on the angle between
+        the light and the surface normals of an object and produces a smooth, continuous gradient from light to shadow. Cel shading differs
+        by breaking this smooth transition in to distanct bands of color, which gives it a more cartoony, hand-drawn look. 
+        <strong>Very cool!</strong> 
+        Similarly, specular highlights are simplified in cel shading, from a smooth gradient to a single sharp white spot. I also had to figure out how to
+        do edge detection, but this is long enough. 
+        <strong>Bye!</strong>
+    </p>
+    <img 
+        src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/11/Cel-Shaded-Characters.jpg?q=50&fit=crop&w=1140&h=&dpr=1.5"
+        alt="Some examples of cel shaded characters!"
+    />
+  </body>
+</html>
