@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 This is a SvelteKit-based personal website/portfolio (alexander-bass.github.io) built with:
+
 - **SvelteKit** - Full-stack framework with file-based routing
 - **TypeScript** - Type-safe JavaScript
 - **Tailwind CSS** - Utility-first CSS framework

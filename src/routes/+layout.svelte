@@ -22,7 +22,7 @@
 		padding: 2rem;
 		box-sizing: border-box;
 	}
-	
+
 	.content-box {
 		width: 100%;
 		max-width: 80vw;
@@ -36,19 +36,19 @@
 		overflow: auto;
 		position: relative;
 	}
-	
+
 	@media (max-width: 768px) {
 		.page-container {
 			padding: 1rem;
 		}
-		
+
 		.content-box {
 			max-width: 95vw;
 			padding: 1.5rem;
 			border-radius: 12px;
 		}
 	}
-	
+
 	@media (max-width: 480px) {
 		.content-box {
 			max-width: 100vw;
@@ -56,7 +56,7 @@
 			border-radius: 8px;
 		}
 	}
-	
+
 	@media (min-width: 1200px) {
 		.content-box {
 			max-width: 60vw;
