@@ -1,24 +1,34 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	
 	let isDark = $state(false);
+	let mounted = $state(false);
 	
 	onMount(() => {
-		// Check for saved theme preference or default to light
-		const savedTheme = localStorage.getItem('theme');
-		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		mounted = true;
 		
-		isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
-		updateTheme();
+		if (browser) {
+			// Check for saved theme preference or default to light
+			const savedTheme = localStorage.getItem('theme');
+			const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+			
+			isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+			updateTheme();
+		}
 	});
 	
 	function toggleTheme() {
+		if (!browser) return;
+		
 		isDark = !isDark;
 		updateTheme();
 		localStorage.setItem('theme', isDark ? 'dark' : 'light');
 	}
 	
 	function updateTheme() {
+		if (!browser) return;
+		
 		if (isDark) {
 			document.documentElement.setAttribute('data-theme', 'dark');
 		} else {
@@ -27,6 +37,7 @@
 	}
 </script>
 
+{#if mounted}
 <button
 	onclick={toggleTheme}
 	class="theme-toggle"
@@ -44,6 +55,7 @@
 		</svg>
 	{/if}
 </button>
+{/if}
 
 <style>
 	.theme-toggle {
