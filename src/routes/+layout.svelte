@@ -8,6 +8,9 @@
 <ThemeToggle />
 
 <main class="page-container">
+	<div class="name-container">
+		<h1 class="name-title">Alexander Bass</h1>
+	</div>
 	<div class="content-box">
 		{@render children()}
 	</div>
@@ -17,10 +20,24 @@
 	.page-container {
 		min-height: 100vh;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		padding: 2rem;
 		box-sizing: border-box;
+	}
+
+	.name-container {
+		align-self: center;
+		margin-bottom: 0.5rem;
+	}
+
+	.name-title {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--gb-fg0);
+		letter-spacing: 0.05em;
+		margin: 0;
 	}
 
 	.content-box {
@@ -40,6 +57,10 @@
 	@media (max-width: 768px) {
 		.page-container {
 			padding: 1rem;
+		}
+
+		.name-title {
+			font-size: 1.5rem;
 		}
 
 		.content-box {
